@@ -10,6 +10,16 @@ body {
     text-align:center;
 }
 
+.switch-to-work {
+    font-size:13px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align:center;
+    color:#a8a8a8;
+}
+
+/* ----------- All Button Styling------------ */
+
 .button-holder {
     width: 25%;
     display:block;
@@ -28,34 +38,6 @@ body {
     vertical-align:middle;
 }
 
-.round-button-circle {
-	width: 100%;
-	height:0;
-	padding-bottom: 100%;
-    border-radius: 50%;
-    overflow:hidden;
-    background: #118DF0;
-}
-
-.round-button-circle:hover {
-    background: #004182; 
-    cursor:pointer;
-}
-
-.round-button-circle-reset {
-	width: 100%;
-	height:0;
-	padding-bottom: 100%;
-    border-radius: 50%;
-    overflow:hidden;
-    background: #004182; 
-}
-
-.round-button-circle-reset:hover {
-    background: #004182; 
-    cursor:pointer;
-}
-
 .button-text {
     display: block;
     float: left;
@@ -72,6 +54,72 @@ body {
     font-weight: 400;
     text-decoration: none;
 }
+
+/* ----------- Work Start Button ------------ */
+
+.work-start-button {
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+    overflow:hidden;
+    background: #118DF0;
+}
+
+.work-start-button:hover {
+    background: #004182; 
+    cursor:pointer;
+}
+
+/* ----------- Work Reset Button ------------ */
+
+.work-reset-button {
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+    overflow:hidden;
+    background: #004182; 
+}
+
+.work-reset-button:hover {
+    background: #004182; 
+    cursor:pointer;
+}
+
+/* ----------- Break Start Button ------------ */
+
+.break-start-button {
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+    overflow:hidden;
+    background: #00D8B1; 
+}
+
+.break-start-button:hover {
+    background: #10a68b; 
+    cursor:pointer;
+}
+
+/* ----------- Break Reset Button ------------ */
+
+.break-reset-button {
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+    overflow:hidden;
+    background: #10a68b; 
+}
+
+.break-reset-button:hover {
+    background: #10a68b; 
+    cursor:pointer;
+}
+
+/* ----------- Timer Styling ------------ */
 
 .timer-container {
     display:table;

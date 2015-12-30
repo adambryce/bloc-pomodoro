@@ -1,16 +1,26 @@
 <div class="round-button-holder">
     <div class="round-button-inner">
-        <div class="round-button-circle" 
-             ng-show="showStartButton"
-             ng-click="startTimer()">
-            <span class="button-text"> START </span>
+        <div class="work-start-button" 
+             ng-show="showWorkStartButton"
+             ng-click="startTimer(1500)">
+            <span class="button-text"> WORK </span>
         </div>
-        <div class="round-button-circle-reset" 
-            ng-show="showResetButton"
-            ng-click="resetTimer()">
+        <div class="work-reset-button" 
+            ng-show="showWorkResetButton"
+            ng-click="resetTimer(1500)">
+            <span class="button-text"> RESET </span>
+        </div>
+        <div class="break-start-button" 
+            ng-show="showBreakStartButton"
+            ng-click="startTimer(300)">
+            <span class="button-text"> BREAK </span>
+        </div>
+        <div class="break-reset-button" 
+            ng-show="showBreakResetButton"
+            ng-click="resetTimer(300)">
             <span class="button-text"> RESET </span>
         </div>
     </div>
 </div>
-
 <timer></timer>
+<div class="switch-to-work" ng-click="resetTimer(1500)">Switch Back to Work Timer</div>
