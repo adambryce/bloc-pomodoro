@@ -1,0 +1,16 @@
+<div class="round-button-holder">
+    <div class="round-button-inner">
+        <div class="round-button-circle" 
+             ng-show="showStartButton"
+             ng-click="startTimer()">
+            <span class="button-text"> START </span>
+        </div>
+        <div class="round-button-circle-reset" 
+            ng-show="showResetButton"
+            ng-click="resetTimer()">
+            <span class="button-text"> RESET </span>
+        </div>
+    </div>
+</div>
+
+<timer></timer>

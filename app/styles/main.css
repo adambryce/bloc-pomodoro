@@ -1,0 +1,98 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    min-height:100%;
+    background-color:#F8F3D4;
+}
+
+.pomo-title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:46px;
+    text-align:center;
+}
+
+.button-holder {
+    width: 25%;
+    display:block;
+    margin:auto;
+}
+
+.round-button-holder {
+    display:table;
+	width:10%;
+    margin:auto;
+    padding-top:10%;
+}
+
+.round-button-inner {
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.round-button-circle {
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+    overflow:hidden;
+    background: #118DF0;
+}
+
+.round-button-circle:hover {
+    background: #004182; 
+    cursor:pointer;
+}
+
+.round-button-circle-reset {
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+    overflow:hidden;
+    background: #004182; 
+}
+
+.round-button-circle-reset:hover {
+    background: #004182; 
+    cursor:pointer;
+}
+
+.button-text {
+    display: block;
+    float: left;
+    width: 100%;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    line-height: 1em;
+    margin-top: -0.4em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #e2eaf3;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.timer-container {
+    display:table;
+}
+
+.timer-outer {
+    font-size:2rem;
+    width:25%;
+    margin:auto;
+    display:table
+}
+
+.timer-inner {
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.timer {
+    text-align:center;
+    height:2em;
+    font-size:4em;
+    font-weight:200;
+    color:#FF4B68;
+}
