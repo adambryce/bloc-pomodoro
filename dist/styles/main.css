@@ -11,11 +11,27 @@ body {
 }
 
 .switch-to-work {
-    font-size:13px;
+    font-size: 15px;
     text-transform: uppercase;
     cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    color: #5A5A5A;
+}
+
+.work-sessions {
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    color: #5A5A5A;
+    margin-bottom:25px;
+}
+
+.center-div {
+    margin:0 auto;
     text-align:center;
-    color:#a8a8a8;
 }
 
 /* ----------- All Button Styling------------ */
@@ -139,7 +155,7 @@ body {
 
 .timer {
     text-align:center;
-    height:2em;
+    height:1.5em;
     font-size:4em;
     font-weight:200;
     color:#FF4B68;

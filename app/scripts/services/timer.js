@@ -6,7 +6,7 @@ blocPomodoro.directive('timer', ['$interval', function($interval) {
         transclude:false,
         link: function(scope, element, attributes) {
             
-            scope.timeLeft = "25:00";
+            scope.timeLeft = 1500;
             scope.showWorkStartButton = true;
             scope.showBreakStartButton = false;
             scope.completedWorkSessions = 0;
@@ -38,13 +38,7 @@ blocPomodoro.directive('timer', ['$interval', function($interval) {
                     
                     totalTimeInSeconds--;
                     console.log(totalTimeInSeconds);
-                    
-                    var minutes = Math.floor(totalTimeInSeconds % 3600 / 60);
-                    var seconds = Math.floor(totalTimeInSeconds % 3600 % 60);
-
-                    if (minutes < 10) {minutes = "0"+minutes;}
-                    if (seconds < 10) {seconds = "0"+seconds;}
-                    scope.timeLeft = minutes+':'+seconds;
+                    scope.timeLeft = totalTimeInSeconds;
                     
                     /* If time gets to zero and it's not on a break then */ 
                     /* resets timer to 5 minutes and switches to a break */ 
@@ -72,7 +66,7 @@ blocPomodoro.directive('timer', ['$interval', function($interval) {
                 console.log('I reset to');
                 console.log(totalTimeInSeconds);
                 scope.stopTimer();
-                scope.timeLeft = scope.convertSecondsToTime(totalTimeInSeconds);
+                scope.timeLeft = totalTimeInSeconds;
                 
                 /* Switch Buttons back after reset */ 
                 /* If you were working, switch it to a break button */ 
@@ -88,9 +82,12 @@ blocPomodoro.directive('timer', ['$interval', function($interval) {
                     scope.iAmWorking = true;
                 
                 /* This is for when a work session is manually reset */ 
-                } else if (totalTimeInSeconds = 1500) {
+                } else if (totalTimeInSeconds == 1500) {
                     scope.workStartButton();
                     scope.iAmWorking = true;
+                } else if (totalTimeInSeconds == 300) {
+                    scope.breakStartButton();
+                    scope.iAmWorking = false;
                 }
             };
             

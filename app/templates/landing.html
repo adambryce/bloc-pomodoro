@@ -23,5 +23,7 @@
     </div>
 </div>
 <timer></timer>
-<div class="switch-to-work" ng-click="resetTimer(1500)">Switch Back to Work Timer</div>
-<div class="switch-to-work">Completed Work Sessions: {{ completedWorkSessions }} </div>
+<div class="work-sessions">Completed Work Sessions: {{ completedWorkSessions }} </div>
+<div class="center-div">
+    <span class="switch-to-work" ng-click="resetTimer(1500)">Switch To to Work Timer | </span> <span class="switch-to-work" ng-click="resetTimer(300)">Switch To to Break Timer</span>
+</div>
