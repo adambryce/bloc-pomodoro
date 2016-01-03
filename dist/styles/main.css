@@ -1,13 +1,6 @@
 body {
     font-family: 'Source Sans Pro', sans-serif;
     min-height:100%;
-    background-color:#F8F3D4;
-}
-
-.pomo-title {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size:46px;
-    text-align:center;
 }
 
 .switch-to-work {
@@ -15,18 +8,22 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     text-align: center;
-    font-weight: 600;
+    font-weight: 800;
     color: #5A5A5A;
+    padding:0 20px 0 20px;
 }
 
 .work-sessions {
     font-size: 16px;
     text-transform: uppercase;
-    cursor: pointer;
     text-align: center;
     font-weight: bold;
-    color: #5A5A5A;
+    color: #118DF0;
     margin-bottom:25px;
+}
+
+.work-sessions-completed {
+    color:#FF4B68;
 }
 
 .center-div {
@@ -83,7 +80,7 @@ body {
 }
 
 .work-start-button:hover {
-    background: #004182; 
+    background: #2063ed; 
     cursor:pointer;
 }
 
@@ -95,11 +92,11 @@ body {
 	padding-bottom: 100%;
     border-radius: 50%;
     overflow:hidden;
-    background: #004182; 
+    background: #2063ed; 
 }
 
 .work-reset-button:hover {
-    background: #004182; 
+    background: #118DF0; 
     cursor:pointer;
 }
 

@@ -23,7 +23,33 @@
     </div>
 </div>
 <timer></timer>
-<div class="work-sessions">Completed Work Sessions: {{ completedWorkSessions }} </div>
+<div class="work-sessions">Completed Work Sessions:<span class="work-sessions-completed"> {{ completedWorkSessions }} </span></div>
 <div class="center-div">
-    <span class="switch-to-work" ng-click="resetTimer(1500)">Switch To to Work Timer | </span> <span class="switch-to-work" ng-click="resetTimer(300)">Switch To to Break Timer</span>
+    <span class="switch-to-work" ng-click="resetTimer(1500)">Switch To Work Timer</span> <span class="switch-to-work" ng-click="resetTimer(300)">Switch To Break Timer</span>
 </div>
+
+<!--Sidebar-->
+
+<div class="menu-outer">
+    <div class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <input class="task-form" ng-model="newTaskText" placeholder="Your Task">
+                <div class="btn" ng-click="addTask()"> ADD TASK </div>
+            </li>
+            <li ng-repeat="task in tasks" class="task-list"> {{ task.text }}</li>
+            <li><div class="btn" ng-click="removeLastTask()" ng-show="showTaskButton">Remove Task</div></li>
+       </ul>
+   </nav>
+</div>
+<a class="menu-close" onClick="return true">
+    <div class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</a>

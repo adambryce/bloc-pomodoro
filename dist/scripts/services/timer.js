@@ -1,4 +1,4 @@
-blocPomodoro.directive('timer', ['$interval', function($interval) {
+blocPomodoro.directive('timer', ['$interval', 'myTasks', function($interval, myTasks) {
     return {
         templateUrl: '/templates/directives/timer.html',
         replace: true,
@@ -11,12 +11,18 @@ blocPomodoro.directive('timer', ['$interval', function($interval) {
             scope.showBreakStartButton = false;
             scope.completedWorkSessions = 0;
             scope.iAmWorking = null;
-            
             var promise;
+            var playGongSound = null;
+            
+
+            var gongSound = new buzz.sound( "assets/sounds/gong", {
+                formats: ['mp3'],
+                preload: true
+            });
+            
             
             /* Starts the Timer and takes in length of timer */
             scope.startTimer = function(totalTimeInSeconds) {
-                    
                 /* This is where the we show the reset buttons */ 
                 /* If the break start button is visible, switch it to break reset */ 
                 if (scope.showBreakStartButton == true) {
@@ -44,6 +50,7 @@ blocPomodoro.directive('timer', ['$interval', function($interval) {
                     /* resets timer to 5 minutes and switches to a break */ 
                     if (totalTimeInSeconds == 0 && scope.iAmWorking == true) {
                         scope.completedWorkSessions++;
+                        gongSound.play();
                         if (scope.completedWorkSessions == 4) {
                             scope.iAmWorking = false;
                             scope.resetTimer(600);
@@ -57,7 +64,9 @@ blocPomodoro.directive('timer', ['$interval', function($interval) {
                     } else if (totalTimeInSeconds == 0 && scope.iAmWorking == false) {
                         scope.iAmWorking = true;
                         scope.resetTimer(1500);
-
+                        playGongSound = true;
+                        gongSound.play();
+                        
                     }
                 }, 1000);  
             };            
@@ -94,17 +103,6 @@ blocPomodoro.directive('timer', ['$interval', function($interval) {
             scope.stopTimer = function() {
                 $interval.cancel(promise);
             };
-            
-            
-            scope.convertSecondsToTime = function(totalTimeInSeconds) {
-                var minutes = Math.floor(totalTimeInSeconds % 3600 / 60);
-                var seconds = Math.floor(totalTimeInSeconds % 3600 % 60);
-                
-                if (minutes < 10) {minutes = "0"+minutes;}
-                if (seconds < 10) {seconds = "0"+seconds;}
-                return scope.timeLeft = minutes+':'+seconds;
-            };
-            
             
             scope.workStartButton = function() {
                 scope.showBreakStartButton = false;
